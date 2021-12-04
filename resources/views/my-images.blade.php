@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
  
-    <title>Laravel Image Manipulation</title>
+    <title>Image Manipulation System</title>
 </head>
  
 <body>
+    <h1 style=" text-align:center;">Image compresser and watermarking software</h1>
     <div class="container mt-4" style="max-width: 600px" >
-        <h2 class="mb-5">Upload your photo</h2>
+    
  
         <form action="{{route('image.watermark')}}" enctype="multipart/form-data" method="post">
             @csrf
@@ -22,7 +23,7 @@
  
  
             <div class="col-md-12 mb-3 text-center">
-                <strong>Manipulated image:</strong><br />
+        
                 <img src="/upload/{{ Session::get('fileName') }}" width="600px"/>
             </div>
             @endif
@@ -38,6 +39,10 @@
             @endif
  
             <div class="mb-3">
+                <level>Enter your WaterMark text</level>
+                 <input type="text" name="text" class="form-control"  id="forfile">
+                 <hr>
+                 <level>Upload your Image</level>
                 <input type="file" name="file" class="form-control"  id="formFile">
             </div>
  
